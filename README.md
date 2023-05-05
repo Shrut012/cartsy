@@ -1,4 +1,4 @@
-A front-end and user-friendly shopping cart appication built using React that provides a seamless experience for users to browse, add, remove, and purchase products.
+A front-end and user-friendly shopping cart application built using React that provides a seamless experience for users to browse, add, remove, and purchase products.
 
 # Getting Started with Create React App
 
