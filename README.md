@@ -1,3 +1,5 @@
+A front-end and user-friendly shopping cart appication built using React that provides a seamless experience for users to browse, add, remove, and purchase products.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
