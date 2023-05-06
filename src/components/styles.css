@@ -97,3 +97,10 @@
     }
 }
 
+.custom-toggle:disabled {
+    opacity: 1 !important;
+    cursor: default !important;
+    background-color: #28a745 !important; /* Set the background color to the same as the enabled state */
+    border-color: #28a745 !important; /* Set the border color to the same as the enabled state */
+    box-shadow: none !important; /* Remove the box shadow */
+  }

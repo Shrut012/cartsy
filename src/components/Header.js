@@ -11,6 +11,7 @@ import { Link, NavLink } from "react-router-dom";
 import { CartState } from "../context/Context";
 import { AiFillDelete } from "react-icons/ai";
 import "./styles.css";
+import { useEffect, useState } from "react";
 
 const Header = () => {
 	const {
@@ -18,6 +19,20 @@ const Header = () => {
 		dispatch,
 		productDispatch,
 	} = CartState();
+
+	const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+	useEffect(() => {
+		const handleResize = () => {
+			setScreenWidth(window.innerWidth);
+		};
+
+		window.addEventListener("resize", handleResize);
+
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
+	}, []);
 
 	return (
 		<Navbar sticky="top" bg="dark" variant="dark" style={{ height: 80 }}>
@@ -27,6 +42,7 @@ const Header = () => {
 						CARTSY
 					</NavLink>
 				</Navbar.Brand>
+
 				<Navbar.Text className="search">
 					<FormControl
 						placeholder="Search a product"
@@ -41,8 +57,16 @@ const Header = () => {
 					></FormControl>
 				</Navbar.Text>
 
-				<Dropdown align={{ sm: "right" }} className="cart_dropdown">
-					<Dropdown.Toggle variant="success">
+				<Dropdown
+					align={{ sm: "right" }}
+					className="cart_dropdown"
+					// style={{ display: screenWidth < 600 ? "none" : "block" }}
+				>
+					<Dropdown.Toggle
+						variant="success"
+						disabled={screenWidth < 600}
+						className="custom-toggle"
+					>
 						<FaShoppingCart color="white" fontSize="25px" />
 						<Badge bg="none" fontSize="25px">
 							{cart.length}
