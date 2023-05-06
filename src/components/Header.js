@@ -57,11 +57,7 @@ const Header = () => {
 					></FormControl>
 				</Navbar.Text>
 
-				<Dropdown
-					align={{ sm: "right" }}
-					className="cart_dropdown"
-					// style={{ display: screenWidth < 600 ? "none" : "block" }}
-				>
+				<Dropdown align={{ sm: "right" }} className="cart_dropdown">
 					<Dropdown.Toggle
 						variant="success"
 						disabled={screenWidth < 600}
